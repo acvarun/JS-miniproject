@@ -6,19 +6,20 @@
     </head>
     <body>
         <div id="pokemonLogo">Pokemon</div>
-        
         <div id="selection">
             <div id="selection1">
                 <div>
                 <select id="pokemon1" onchange="handleChange1()">
-                    <option value="Charmander">Charmander</option>
-                    <option value="Bulbasaur">Bulbasaur</option>
-                    <option value="Squirtle">Squirtle</option>
-                    <option value="Pikachu">Pikachu</option>
+                    <option value="Charizard">Charizard</option>
+                    <option value="Venusaur">Venusaur</option>
+                    <option value="Blastoise">Blastoise</option>
+                    <option value="Raichu">Raichu</option>
+                    <option value="Pidgeot">Pidgeot</option>
+                    <option value="Dragonite">Dragonite</option>
                 </select>
                 </div>
                 <div>
-                <img class="image" id="img1" src="https://w7.pngwing.com/pngs/156/686/png-transparent-pokemon-go-pokemon-x-and-y-ash-ketchum-charmander-pokemon-background-orange-cartoon-fictional-character-thumbnail.png" alt="image" />
+                <img class="image" id="img1" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="image" />
                 </div>
                 <div class="typeDiv">Type : <span id="type1">fire</span></div>
             </div>
@@ -37,24 +38,39 @@
         </div>
         <div id="match">
             <div>
-                <input type="range" min="0" max="100" value="100" class="slider" />
-                <div class="healthDiv"><span id="health1">100</span><span>/100</span>  <span id="damage1"></span></div>
-                <button class="pokemon1-btn" id="button1" onclick="handleClick1()">ember</button>
-                <button class="pokemon1-btn" id="button2" onclick="handleClick2()">metal-claw</button>
+                <div class="healthbarDiv">
+                    <div class="healthbar">
+                        <div class="healthbar-name" id="healthbar-name1">Charizard</div>
+                        <input type="range" min="0" max="100" value="100" class="slider" id="input1"/>
+                        <div class="healthDiv"><span id="health1">100</span><span>/100</span>  <span id="damage1"></span></div>
+                    </div>
+                    <div>
+                        <img class="health-img" id="health-img1" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="image"/>
+                    </div>
+                </div>
+                <button class="pokemon1-btn" id="button1" onclick="handleClick1()">flame-thrower</button>
+                <button class="pokemon1-btn" id="button2" onclick="handleClick2()">ember</button>
                 <button class="pokemon1-btn" id="button3" onclick="handleClick3()">scratch</button>
-                <button class="pokemon1-btn" id="button4" onclick="handleClick4()">flame-thrower</button>
-                <div class="atkDiv" id="atk"><span id="poke1"></span> used <span id="atk1"></span></div>
+                <button class="pokemon1-btn" id="button4" onclick="handleClick4()">hyper-beam</button>
             </div>
             <div>
-                <input type="range" min="0" max="100" value="100" class="slider" id="input2"/>
-                <div class="healthDiv"><span id="health2">100</span><span>/100</span>   <span id="damage2"></span></div>
-                <div class="atkDiv" id="oppAtk"><span id="poke2"></span> used <span id="atk2"></span></div>
+                <div class="healthbarDiv">
+                    <div>
+                        <img class="health-img" id="health-img2" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="image"/>
+                    </div>
+                    <div class="healthbar">
+                        <div class="healthbar-name" id="healthbar-name2">Charizard</div>
+                        <input type="range" min="0" max="100" value="100" class="slider" id="input2"/>
+                        <div class="healthDiv"><span id="health2">100</span><span>/100</span>   <span id="damage2"></span></div>
+                    </div>
+                </div>
                 <button id="nextBtn" onclick="next()">Next</button>
+                <div id="atkDiv"><span id="poke"></span> used <span id="atk"></span></div>
             </div>
         </div>
         <div id="result-div">
             <button id="endMatch" onclick="endMatch()">Result</button>
-            <div id="result">Winner is<span></span></div>
+            <div id="result">Winner - <span id="winner-span">?</span></div>
             <img id="winner-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYoXEBpWbFM0XRBEl3S3tNcnQCU_D1plGRbw&usqp=CAU" alt="image"/>
         </div>
         <script src="App.js"></script>
