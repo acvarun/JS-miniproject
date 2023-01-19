@@ -6,7 +6,12 @@ body{
     background-size:cover;
     position: relative;
 }
-
+#startDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 #pokemonLogo{
     margin-left: 33%;
     width: 300px;
@@ -17,6 +22,16 @@ body{
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: red;
     text-shadow: 0 0 4px red, 0 0 6px red;
+}
+.startBtn{
+    height:80px;
+    width: 300px;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 30px;
 }
 .slider{
     color: red;
@@ -31,6 +46,7 @@ body{
     align-items: center;
     width: 98vw;
     height: 50vh;
+    display: none;
 }
 select{
     background-color: pink;
@@ -136,6 +152,26 @@ button{
 #button4{
     background-color: darkmagenta;
 }
+#button5{
+    background-color: red;
+    display: none;
+    visibility: hidden;
+}
+#button6{
+    background-color: blue;
+    display: none;
+    visibility: hidden;
+}
+#button7{
+    background-color: gray;
+    display: none;
+    visibility: hidden;
+}
+#button8{
+    background-color: darkmagenta;
+    display: none;
+    visibility: hidden;
+}
 .healthDiv{
     margin-left: 50px;
     font-size: 30px;
@@ -173,6 +209,7 @@ button{
     font-weight: bold;
 }
 #nextBtn{
+    display: none;
     visibility: hidden;
     margin-left: 50px;
     height: 50px;
@@ -222,4 +259,10 @@ button{
 .health-img{
     height: 200px;
     width: 200px;
+}
+#selection2{
+    display: none;
+}
+#selection3{
+    display: none;
 }
