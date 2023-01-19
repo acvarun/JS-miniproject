@@ -6,6 +6,10 @@
     </head>
     <body>
         <div id="pokemonLogo">Pokemon</div>
+        <div id="startDiv">
+            <button class="startBtn" id="computer" onclick="Computer()">vs Computer</button>
+            <button class="startBtn" id="1v1" onclick="oneVone()">one vs one</button>
+        </div>
         <div id="selection">
             <div id="selection1">
                 <div>
@@ -23,7 +27,6 @@
                 </div>
                 <div class="typeDiv">Type : <span id="type1">fire</span></div>
             </div>
-
             <div id="middle">
                 <div id="warning">Please press below button</div>
                 <button id="oppbtn" onclick="opponent()">Click here for opponent</button>
@@ -34,7 +37,22 @@
                 <img class="image" id="img2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYoXEBpWbFM0XRBEl3S3tNcnQCU_D1plGRbw&usqp=CAU" alt="image" />
                 <div class="typeDiv">Type : <span id="type2">?</span></div>
             </div>
-            
+            <div id="selection3">
+                <div>
+                <select id="pokemon3" onchange="handleChange2()">
+                    <option value="Charizard">Charizard</option>
+                    <option value="Venusaur">Venusaur</option>
+                    <option value="Blastoise">Blastoise</option>
+                    <option value="Raichu">Raichu</option>
+                    <option value="Pidgeot">Pidgeot</option>
+                    <option value="Dragonite">Dragonite</option>
+                </select>
+                </div>
+                <div>
+                <img class="image" id="img3" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="image" />
+                </div>
+                <div class="typeDiv">Type : <span id="type3">fire</span></div>
+            </div>
         </div>
         <div id="match">
             <div>
@@ -64,6 +82,10 @@
                         <div class="healthDiv"><span id="health2">100</span><span>/100</span>   <span id="damage2"></span></div>
                     </div>
                 </div>
+                <button class="pokemon1-btn" id="button5" onclick="handleClick5()">flame-thrower</button>
+                <button class="pokemon1-btn" id="button6" onclick="handleClick6()">ember</button>
+                <button class="pokemon1-btn" id="button7" onclick="handleClick7()">scratch</button>
+                <button class="pokemon1-btn" id="button8" onclick="handleClick8()">hyper-beam</button>
                 <button id="nextBtn" onclick="next()">Next</button>
                 <div id="atkDiv"><span id="poke"></span> used <span id="atk"></span></div>
             </div>
