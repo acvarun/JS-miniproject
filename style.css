@@ -1,9 +1,9 @@
 body{
     background-color: lightcyan;
     background-image: url("https://i.pinimg.com/736x/a8/34/af/a834afbaa0de63124cf577735444c29c--pixel-art.jpg");
-    background-position: center;
+    background-position:initial;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
     position: relative;
 }
 
@@ -20,8 +20,8 @@ body{
 }
 .slider{
     color: red;
-    height: 80px;
-    width: 1400px;
+    height: 60px;
+    width: 500px;
     margin-left: 50px;
 }
 
@@ -29,7 +29,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100vw;
+    width: 98vw;
     height: 50vh;
 }
 select{
@@ -46,7 +46,7 @@ select{
 }
 #match{
     display:none ;
-    width: 100vw;
+    width: 98vw;
     height: 50vh;
 }
 #warning{
@@ -86,13 +86,12 @@ select{
     width: 180px;
 }
 button{
-    margin: 30px;
+    margin: 22px;
 }
 .image{
     width: 300px;
     height: 300px;
     margin: 20px;
-    opacity: 0.9;
 }
 .typeDiv{
     margin: 20px;
@@ -118,7 +117,7 @@ button{
     justify-content: space-between;
     height:80px;
     width: 300px;
-    margin: 10px;
+    margin-bottom: 10px;
     color: white;
     border-radius: 15px;
     font-size: 30px;
@@ -139,7 +138,7 @@ button{
 }
 .healthDiv{
     margin-left: 50px;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
 }
 #oppbtn{
@@ -168,7 +167,7 @@ button{
 #damage2{
     color: red;
 }
-.atkDiv{
+#atkDiv{
     margin-left: 50px;
     font-size: 30px;
     font-weight: bold;
@@ -176,7 +175,7 @@ button{
 #nextBtn{
     visibility: hidden;
     margin-left: 50px;
-    height: 60px;
+    height: 50px;
     width: 300px;
     background-color: lawngreen;
     color: white;
@@ -196,9 +195,31 @@ button{
     justify-content: center;
     align-items: center;
 }
-#oppAtk{
+#atkDiv{
     visibility: hidden;
 }
-#atk{
-    visibility: hidden;
+.healthbar{
+    height: 140px;
+    width : 600px;
+    background-color: rgb(218, 227, 117);
+    border: 2px solid white;
+    border-radius: 15px;
+}
+.healthbar-name{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 200;
+}
+.healthbarDiv{
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.health-img{
+    height: 200px;
+    width: 200px;
 }
