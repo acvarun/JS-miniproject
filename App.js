@@ -90,7 +90,26 @@ const pokemon=[
     }
 
 ]
-console.log(pokemon[0].id)
+let num=null;
+function Computer(){
+    document.getElementById("startDiv").style.display="none";
+    document.getElementById("selection").style.display="flex";
+    document.getElementById("selection2").style.display="block";
+    document.getElementById("nextBtn").style.display="inline";
+}
+function oneVone(){
+    num=1;
+    document.getElementById("startDiv").style.display="none";
+    document.getElementById("selection").style.display="flex";
+    document.getElementById("selection3").style.display="block";
+    document.getElementById("oppbtn").style.display="none";
+    document.getElementById("button5").style.display="inline";
+    document.getElementById("button6").style.display="inline";
+    document.getElementById("button7").style.display="inline";
+    document.getElementById("button8").style.display="inline";
+}
+
+
 let obj1=pokemon[0]
 let input1=document.getElementById("input1");
 let input2=document.getElementById("input2");
@@ -115,7 +134,7 @@ value14=obj1.value4;
 
 
 
-let selected1="Yours Charizard";
+let selected1="Your Charizard";
 
 function handleChange1(){
     selected1=document.getElementById("pokemon1").value;
@@ -123,8 +142,7 @@ function handleChange1(){
     for(let i=0;i<pokemon.length;i++){
         if(pokemon[i].name===selected1){
             obj1=pokemon[i]
-            selected1="Yours "+obj1.name;
-            console.log(selected1)
+            selected1="Your "+obj1.name;
             document.getElementById("img1").src=obj1.image;
             document.getElementById("type1").innerHTML=obj1.type;
             document.getElementById("health-img1").src=obj1.image;
@@ -142,9 +160,9 @@ function handleChange1(){
     }
     
 }
-let obj2={}
-let selected2="";
-let num=null;
+let obj2=pokemon[0]
+let selected2="Opponent Charizard";
+
 function opponent(){
     num=Math.floor(Math.random()*(pokemon.length+1))
     for(let i=0;i<pokemon.length;i++){
@@ -156,6 +174,49 @@ function opponent(){
             document.getElementById("type2").innerHTML=obj2.type;
             document.getElementById("healthbar-name2").innerHTML=obj2.name;
             document.getElementById("health-img2").src=obj2.image;
+            break;
+        }
+    }
+}
+
+let button5=document.getElementById("button5");
+let button6=document.getElementById("button6");
+let button7=document.getElementById("button7");
+let button8=document.getElementById("button8");
+
+let value21 =0;
+let value22 =0;
+let value23 =0;
+let value24 =0;
+
+button5.innerHTML=obj2.attack1;
+button6.innerHTML=obj2.attack2;
+button7.innerHTML=obj2.attack3;
+button8.innerHTML=obj2.attack4;
+value21=obj2.value1;
+value22=obj2.value2;
+value23=obj2.value3;
+value24=obj2.value4;
+
+
+function handleChange2(){
+    selected2=document.getElementById("pokemon3").value;
+    for(let i=0;i<pokemon.length;i++){
+        if(pokemon[i].name===selected2){
+            obj2=pokemon[i]
+            selected2="Opponent "+obj2.name;
+            document.getElementById("img3").src=obj2.image;
+            document.getElementById("type3").innerHTML=obj2.type;
+            document.getElementById("health-img2").src=obj2.image;
+            document.getElementById("healthbar-name2").innerHTML=obj2.name;
+            button5.innerHTML=obj2.attack1;
+            button6.innerHTML=obj2.attack2;
+            button7.innerHTML=obj2.attack3;
+            button8.innerHTML=obj2.attack4;
+            value21=obj2.value1;
+            value22=obj2.value2;
+            value23=obj2.value3;
+            value24=obj2.value4;
             break;
         }
     }
@@ -196,11 +257,15 @@ function handleClick1(){
     button2.style.visibility="hidden";
     button3.style.visibility="hidden";
     button4.style.visibility="hidden";
-    document.getElementById("poke").innerHTML=obj1.name;
+    document.getElementById("poke").innerHTML=selected1;
     document.getElementById("atk").innerHTML=obj1.attack1;
     document.getElementById("damage2").innerHTML=-1*obj1.value1;
     document.getElementById("nextBtn").style.visibility="visible"
     document.getElementById("atkDiv").style.visibility="visible"
+    button5.style.visibility="visible";
+    button6.style.visibility="visible";
+    button7.style.visibility="visible";
+    button8.style.visibility="visible";
 }
 
 function handleClick2(){
@@ -221,11 +286,15 @@ function handleClick2(){
     button2.style.visibility="hidden";
     button3.style.visibility="hidden";
     button4.style.visibility="hidden";
-    document.getElementById("poke").innerHTML=obj1.name;
+    document.getElementById("poke").innerHTML=selected1;
     document.getElementById("atk").innerHTML=obj1.attack2;
     document.getElementById("damage2").innerHTML=-1*obj1.value2;
     document.getElementById("nextBtn").style.visibility="visible"
     document.getElementById("atkDiv").style.visibility="visible"
+    button5.style.visibility="visible";
+    button6.style.visibility="visible";
+    button7.style.visibility="visible";
+    button8.style.visibility="visible";
 }
 
 function handleClick3(){
@@ -246,11 +315,15 @@ function handleClick3(){
     button2.style.visibility="hidden";
     button3.style.visibility="hidden";
     button4.style.visibility="hidden";
-    document.getElementById("poke").innerHTML=obj1.name;
+    document.getElementById("poke").innerHTML=selected1;
     document.getElementById("atk").innerHTML=obj1.attack3;
     document.getElementById("damage2").innerHTML=-1*obj1.value3;
     document.getElementById("nextBtn").style.visibility="visible"
     document.getElementById("atkDiv").style.visibility="visible"
+    button5.style.visibility="visible";
+    button6.style.visibility="visible";
+    button7.style.visibility="visible";
+    button8.style.visibility="visible";
 }
 
 function handleClick4(){
@@ -271,21 +344,20 @@ function handleClick4(){
     button2.style.visibility="hidden";
     button3.style.visibility="hidden";
     button4.style.visibility="hidden";
-    document.getElementById("poke").innerHTML=obj1.name;
+    document.getElementById("poke").innerHTML=selected1;
     document.getElementById("atk").innerHTML=obj1.attack4;
     document.getElementById("damage2").innerHTML=-1*obj1.value4;
     document.getElementById("nextBtn").style.visibility="visible"
     document.getElementById("atkDiv").style.visibility="visible"
+    button5.style.visibility="visible";
+    button6.style.visibility="visible";
+    button7.style.visibility="visible";
+    button8.style.visibility="visible";
 }
 
 function next(){
     let n=Math.floor(Math.random()*4)
-    console.log(n)
-    console.log(obj2.name)
     if(n===0){
-        document.getElementById("poke").innerHTML=obj2.name;
-        document.getElementById("atk").innerHTML=obj2.attack1;
-        document.getElementById("damage1").innerHTML=-1*obj2.value1;
         result1=result1-obj2.value1;
         if(result1<=0){
             loser=selected1;
@@ -299,11 +371,11 @@ function next(){
             input1.value=result1;
             document.getElementById("health1").innerHTML=result1;
         }
+        document.getElementById("poke").innerHTML=selected2;
+        document.getElementById("atk").innerHTML=obj2.attack1;
+        document.getElementById("damage1").innerHTML=-1*obj2.value1;
     }
     else if(n===1){
-        document.getElementById("poke").innerHTML=obj2.name;
-        document.getElementById("atk").innerHTML=obj2.attack2;
-        document.getElementById("damage1").innerHTML=-1*obj2.value2;
         result1=result1-obj2.value2;
         if(result1<=0){
             loser=selected1;
@@ -317,11 +389,11 @@ function next(){
             input1.value=result1;
             document.getElementById("health1").innerHTML=result1;
         }
+        document.getElementById("poke").innerHTML=selected2;
+        document.getElementById("atk").innerHTML=obj2.attack2;
+        document.getElementById("damage1").innerHTML=-1*obj2.value2;
     }
     else if(n===2){
-        document.getElementById("poke").innerHTML=obj2.name;
-        document.getElementById("atk").innerHTML=obj2.attack3;
-        document.getElementById("damage1").innerHTML=-1*obj2.value3;
         result1=result1-obj2.value3;
         if(result1<=0){
             loser=selected1;
@@ -335,11 +407,11 @@ function next(){
             input1.value=result1;
             document.getElementById("health1").innerHTML=result1;
         }
+        document.getElementById("poke").innerHTML=selected2;
+        document.getElementById("atk").innerHTML=obj2.attack3;
+        document.getElementById("damage1").innerHTML=-1*obj2.value3;
     }
     else if(n===3){
-        document.getElementById("poke").innerHTML=obj2.name;
-        document.getElementById("atk").innerHTML=obj2.attack4;
-        document.getElementById("damage1").innerHTML=-1*obj2.value4;
         result1=result1-obj2.value4;
         if(result1<=0){
             loser=selected1;
@@ -353,6 +425,9 @@ function next(){
             input1.value=result1;
             document.getElementById("health1").innerHTML=result1;
         }
+        document.getElementById("poke").innerHTML=selected2;
+        document.getElementById("atk").innerHTML=obj2.attack4;
+        document.getElementById("damage1").innerHTML=-1*obj2.value4;
     }
     button1.style.visibility="visible";
     button2.style.visibility="visible";
@@ -361,9 +436,119 @@ function next(){
     document.getElementById("nextBtn").style.visibility="hidden"
 }
 
+function handleClick5(){
+    result1=result1-value21;
+    if(result1<=0){
+        loser=selected1;
+        winner=selected2;
+        input1.value=0;
+        document.getElementById("health1").innerHTML=0;
+        document.getElementById("match").style.display="none"
+        document.getElementById("endMatch").style.display="block"
+    }
+    else{
+        input2.value=result2;
+        document.getElementById("health1").innerHTML=result1;
+    }
+    button5.style.visibility="hidden";
+    button6.style.visibility="hidden";
+    button7.style.visibility="hidden";
+    button8.style.visibility="hidden";
+    document.getElementById("poke").innerHTML=selected2;
+    document.getElementById("atk").innerHTML=obj2.attack1;
+    document.getElementById("damage1").innerHTML=-1*obj2.value1;
+    document.getElementById("atkDiv").style.visibility="visible"
+    button1.style.visibility="visible";
+    button2.style.visibility="visible";
+    button3.style.visibility="visible";
+    button4.style.visibility="visible";
+}
+
+function handleClick6(){
+    result1=result1-value22;
+    if(result1<=0){
+        loser=selected1;
+        winner=selected2;
+        input1.value=0;
+        document.getElementById("health1").innerHTML=0;
+        document.getElementById("match").style.display="none"
+        document.getElementById("endMatch").style.display="block"
+    }
+    else{
+        input2.value=result2;
+        document.getElementById("health1").innerHTML=result1;
+    }
+    button5.style.visibility="hidden";
+    button6.style.visibility="hidden";
+    button7.style.visibility="hidden";
+    button8.style.visibility="hidden";
+    document.getElementById("poke").innerHTML=selected2;
+    document.getElementById("atk").innerHTML=obj2.attack2;
+    document.getElementById("damage1").innerHTML=-1*obj2.value2;
+    document.getElementById("atkDiv").style.visibility="visible"
+    button1.style.visibility="visible";
+    button2.style.visibility="visible";
+    button3.style.visibility="visible";
+    button4.style.visibility="visible";
+}
+
+function handleClick7(){
+    result1=result1-value23;
+    if(result1<=0){
+        loser=selected1;
+        winner=selected2;
+        input1.value=0;
+        document.getElementById("health1").innerHTML=0;
+        document.getElementById("match").style.display="none"
+        document.getElementById("endMatch").style.display="block"
+    }
+    else{
+        input2.value=result2;
+        document.getElementById("health1").innerHTML=result1;
+    }
+    button5.style.visibility="hidden";
+    button6.style.visibility="hidden";
+    button7.style.visibility="hidden";
+    button8.style.visibility="hidden";
+    document.getElementById("poke").innerHTML=selected2;
+    document.getElementById("atk").innerHTML=obj2.attack3;
+    document.getElementById("damage1").innerHTML=-1*obj2.value3;
+    document.getElementById("atkDiv").style.visibility="visible"
+    button1.style.visibility="visible";
+    button2.style.visibility="visible";
+    button3.style.visibility="visible";
+    button4.style.visibility="visible";
+}
+
+function handleClick8(){
+    result1=result1-value24;
+    if(result1<=0){
+        loser=selected1;
+        winner=selected2;
+        input1.value=0;
+        document.getElementById("health1").innerHTML=0;
+        document.getElementById("match").style.display="none"
+        document.getElementById("endMatch").style.display="block"
+    }
+    else{
+        input2.value=result2;
+        document.getElementById("health1").innerHTML=result1;
+    }
+    button5.style.visibility="hidden";
+    button6.style.visibility="hidden";
+    button7.style.visibility="hidden";
+    button8.style.visibility="hidden";
+    document.getElementById("poke").innerHTML=selected2;
+    document.getElementById("atk").innerHTML=obj2.attack4;
+    document.getElementById("damage1").innerHTML=-1*obj2.value4;
+    document.getElementById("atkDiv").style.visibility="visible"
+    button1.style.visibility="visible";
+    button2.style.visibility="visible";
+    button3.style.visibility="visible";
+    button4.style.visibility="visible";
+}
+
 function endMatch(){
-    console.log(selected1)
-    console.log(selected2)
     if(winner===selected2){
         document.getElementById("winner-span").innerHTML=selected2;
         document.getElementById("winner-img").src=obj2.image
