@@ -447,7 +447,7 @@ function handleClick5(){
         document.getElementById("endMatch").style.display="block"
     }
     else{
-        input2.value=result2;
+        input1.value=result1;
         document.getElementById("health1").innerHTML=result1;
     }
     button5.style.visibility="hidden";
@@ -475,7 +475,7 @@ function handleClick6(){
         document.getElementById("endMatch").style.display="block"
     }
     else{
-        input2.value=result2;
+        input1.value=result1;
         document.getElementById("health1").innerHTML=result1;
     }
     button5.style.visibility="hidden";
@@ -503,7 +503,7 @@ function handleClick7(){
         document.getElementById("endMatch").style.display="block"
     }
     else{
-        input2.value=result2;
+        input1.value=result1;
         document.getElementById("health1").innerHTML=result1;
     }
     button5.style.visibility="hidden";
@@ -531,7 +531,7 @@ function handleClick8(){
         document.getElementById("endMatch").style.display="block"
     }
     else{
-        input2.value=result2;
+        input1.value=result1;
         document.getElementById("health1").innerHTML=result1;
     }
     button5.style.visibility="hidden";
